@@ -1,0 +1,48 @@
+<div class="container boats">
+    <div class="row">
+      <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Orders table</h1>
+      </div>
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <table class="table table-striped table-hover">
+              <thead>
+              <tr>
+                <th scope="col">Dog Name</th>
+                <th scope="col">Dog Breed</th>
+                <th scope="col">Date</th>
+                <th scope="col">Grooming Services</th>
+                <th scope="col">description</th>
+                <th scope="col"></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let order of orders.content | paginate: { itemsPerPage: pageSize, currentPage: p, totalItems: orders.totalElements };let i=index">
+  
+                <td>{{order.dogName}}</td>
+                <td>{{order.dogBreed}}</td>
+                <td>{{order.dayCareDate | date:'dd/MM/yyyy HH:mm'}}</td>
+                <td>{{order.groomingServices}}</td>
+                <td>{{order.description}}</td>
+                <td>
+  
+                    <button (click)="goToOrder(order)" style="color:blue;cursor: pointer;border: none;">
+                        show                    
+                    </button>
+              </tr>
+  
+              </tbody>
+  
+            </table>
+            <nav aria-label="Page navigation example">
+              <div style="display: flex;">
+                <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+               </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

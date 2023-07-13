@@ -1,0 +1,51 @@
+ 
+    <div class="container">
+      <div class="row">
+        <h2>Order</h2>
+        <div>
+          <!-- Image carousel -->
+          <div class="carousel slide" id="carouselExampleIndicators">
+            <div class="carousel-indicators">
+              <button *ngFor="let image of order.images; let i = index" [attr.aria-label]="'Slide ' + (i + 1)"
+                      [attr.data-bs-slide-to]="i" [class.active]="i === 0" aria-current="true"
+                      data-bs-target="#carouselExampleIndicators" type="button"></button>
+            </div>
+            <div class="carousel-inner">
+              <div *ngFor="let image of order.images; let i = index" [class.active]="i === 0" class="carousel-item">
+                <img [src]="image.url" alt="..." class="d-block carouselImg">
+              </div>
+            </div>
+            <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators"
+                    type="button">
+              <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators"
+                    type="button">
+              <span aria-hidden="true" class="carousel-control-next-icon"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+  
+          
+  
+          <!-- Order info -->
+
+            <h4>Description</h4>
+            <p>{{ order.description }}</p>
+            <hr>
+            <hr>
+            <div class="row">
+              <div class="col-6">
+                <p>Dog Name: <b>{{ order.dogName }}</b></p>
+                <p>Dog Breed: <b>{{ order.dogBreed }}</b></p>
+                <p>Date: <b>{{ order.dayCareDate }}</b></p>
+                <p>Grooming Services: <b>{{ order.groomingServices }}</b></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+ 
+  

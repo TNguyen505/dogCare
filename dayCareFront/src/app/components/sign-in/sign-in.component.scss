@@ -1,0 +1,236 @@
+@import "./src/scss/variables/index.scss";
+
+form {
+  display: inline-block;
+}
+
+.form-control {
+  width: 700px;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: $m-sm;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #000;
+}
+
+.separator:not(:empty)::before {
+  margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: .25em;
+}
+
+.bg-image {
+  background-image: url("../../../assets/brandAssets/dogDayCare.jpg");
+  background-size: cover;
+  height: 100%;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.btn {
+  background-color: $primary;
+  border: $primary;
+  transition: 300ms;
+}
+
+
+.card {
+  background-color: $white;
+  border-radius: $br-100;
+  display: flex;
+  flex-direction: column; /* Stacks child elements vertically */
+  justify-content: center;
+  align-items: center;
+  max-width: 400px; /* Adjust the maximum width as per your preference */
+  margin: 0 auto; /* Centers the card horizontally */
+  padding: $p;
+  position: absolute; /* Positions the card in the center of the page */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Additional styles for responsiveness */
+  @media only screen and (max-width: 576px) {
+    max-width: 300px;
+  }
+
+  @media only screen and (min-width: 576px) {
+    max-width: 400px;
+  }
+
+  /* Add media queries for other screen sizes as needed */
+}
+
+@media only screen and (max-width: 576px) {
+  form {
+    padding-top: 110px;
+    height: 600px;
+
+  }
+
+  div .text-center {
+    padding-bottom: $p-lg;
+  }
+
+  .form-control {
+    width: 300px;
+  }
+
+  .container {
+    padding-bottom: 125px;
+  }
+
+  .card {
+    padding: $p-sm;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  form {
+    padding-top: 110px;
+    height: 625px;
+
+  }
+
+  div .text-center {
+    padding-bottom: $p-lg;
+  }
+
+  .form-control {
+    width: 400px;
+  }
+
+  .container {
+    padding-bottom: 125px;
+  }
+
+  .card {
+    padding: $p;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  form {
+    padding-top: 110px;
+    height: 625px;
+
+  }
+
+  div .text-center {
+    padding-bottom: $p-lg;
+  }
+
+  .form-control {
+    width: 600px;
+  }
+
+  .container {
+    padding-bottom: 125px;
+  }
+
+  .card {
+    padding: $p;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  form {
+    padding-top: 110px;
+    height: 650px;
+
+  }
+
+  div .text-center {
+    padding-bottom: $p-lg;
+  }
+
+  .form-control {
+    width: 800px;
+  }
+
+  .container {
+    padding-bottom: 125px;
+  }
+
+  .card {
+    padding: $p;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  form {
+    padding-top: 110px;
+    height: 700px;
+  }
+
+  div .text-center {
+    padding-bottom: $p-lg;
+  }
+
+  .form-control {
+    width: 800px;
+  }
+
+  .container {
+    padding-bottom: 125px;
+  }
+
+  .card {
+    padding: $p;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  form {
+    padding-top: 150px;
+    height: 700px;
+  }
+
+  div .text-center {
+    padding-bottom: $p;
+  }
+
+  .form-control {
+    width: 800px;
+  }
+
+  .container {
+    padding-bottom: 125px;
+  }
+
+  .card {
+    padding: $p;
+  }
+
+  .btn:hover {
+    background-color: $secondary;
+    border: $secondary;
+  }
+  .btn-google {
+    background-color: #FF5722; /* Change to Google orange */
+    color: #fff; /* Set text color to white */
+    text-align: center; /* Center text */
+    display: flex; /* Use flexbox to center icon and text */
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    margin-top:15px ;
+    height: 40px; /* Center vertically */
+  }
+
+  .btn-google i {
+    margin-right: 10px;
+     /* Move icon to the left */
+  }
+
+}

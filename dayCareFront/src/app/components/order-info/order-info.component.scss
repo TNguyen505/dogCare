@@ -1,0 +1,384 @@
+@import "src/scss/variables/index.scss";
+
+.withSkipper {
+  border-left: 1px solid grey;
+  height: 20px;
+  padding-left: 10px;
+}
+
+.withText {
+  padding-left: 3px;
+  padding-right: 10px;
+}
+
+img {
+  width: 100%;
+  height: 500px;
+  vertical-align: top;
+  overflow: hidden;
+  object-fit: contain;
+  object-position: 50% 50%;
+}
+
+#image-gallery {
+  margin: 0 auto;
+}
+
+#current-image {
+  width: 100%;
+}
+
+#image-thumbs {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.thumb {
+  object-fit: cover;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.form_container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 50px 40px 20px 40px;
+  background-color: #ffffff;
+  box-shadow: 0px 106px 42px rgba(0, 0, 0, 0.01),
+  0px 59px 36px rgba(0, 0, 0, 0.05), 0px 26px 26px rgba(0, 0, 0, 0.09),
+  0px 7px 15px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 11px;
+}
+
+.input_container {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input_label {
+  font-size: 1rem;
+  color: $grey-60;
+  font-weight: 500;
+  float: left;
+  text-align: left;
+  margin-left: -$p !important;
+}
+.input_answer {
+  text-align: right;
+  float: right;
+}
+
+.total {
+  margin-left: 0 !important;
+}
+
+.input_field {
+  width: auto;
+  height: 40px;
+  padding: 0 0 0 40px;
+  border-radius: 7px;
+  outline: none;
+  border: 1px solid $grey;
+  filter: drop-shadow(0px 1px 0px #efefef) drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.input_field:focus {
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 0px 2px #242424;
+  background-color: transparent;
+}
+
+.sign-in_btn {
+  border: 0;
+  width: 100%;
+  height: 40px;
+  outline: none;
+  color: $white;
+  cursor: pointer;
+  border-radius: 7px;
+  background: $primary;
+}
+
+li, ul {
+  list-style: none !important;
+}
+
+.separator .line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  border: 0;
+  background-color: #e8e8e8;
+}
+
+.note {
+  font-size: 0.75rem;
+  color: #8B8E98;
+  text-decoration: underline;
+}
+
+.booking {
+  float: right;
+  padding: 5px;
+  margin-top: $m;
+}
+
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.carouselImg {
+  width: 100%;
+  object-fit: cover;
+  height: 600px;
+  object-position: 50% 50%;
+}
+
+.checkoutBtn {
+  --color: rgb(26, 113, 210);
+  font-family: inherit;
+  display: inline-block;
+  width: 100%;
+  line-height: 2.5em;
+  margin: 10px 0;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: var(--color);
+  background-color: $white;
+}
+
+
+
+@media only screen and (max-width: 576px) {
+  img {
+    height: 500px;
+    width: 100%;
+  }
+
+  .carouselImg {
+    height: 400px;
+  }
+
+  .booking {
+    display: none;
+  }
+
+  .checkoutBtn {
+    color: $white;
+    background-color: $primary;
+    border: 2px solid $primary;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  img {
+    height: 500px;
+  }
+
+  .carouselImg {
+    height: 500px;
+  }
+
+  .booking {
+    display: none;
+  }
+
+  .checkoutBtn {
+    color: $white;
+    background-color: $primary;
+    border: 2px solid $primary;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+
+  .carouselImg {
+    height: 675px;
+  }
+
+  .booking {
+    display: none;
+  }
+
+  .checkoutBtn {
+    color: $white;
+    background-color: $primary;
+    border: 2px solid $primary;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .carouselImg {
+    height: 650px;
+  }
+
+  footer {
+    display: none;
+  }
+
+  img {
+    height: 500px;
+  }
+
+  .carouselImg {
+    height: 675px;
+  }
+
+  #image-gallery {
+    width: 600px;
+  }
+
+  #image-thumbs {
+    margin-top: 20px;
+  }
+
+  .booking {
+    display: block;
+  }
+
+  .thumb {
+    width: 80px;
+    height: 80px;
+  }
+
+  .checkoutBtn {
+    border: 1px $b-solid $primary;
+    width: 250px;
+    height: 40px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: 0.3s;
+    display: block;
+    color: $primary;
+    background: $white;
+    text-decoration: none !important;
+  }
+
+  .checkoutBtn:hover {
+    //border: 1px $b-solid $primary;
+    color: white;
+    background: $primary;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .carouselImg {
+    height: 750px;
+  }
+
+  footer {
+    display: none;
+  }
+
+  img {
+    height: 500px;
+  }
+
+  .carouselImg {
+    height: 675px;
+  }
+
+  #image-gallery {
+    width: 600px;
+  }
+
+  #image-thumbs {
+    margin-top: 20px;
+  }
+
+  .thumb {
+    width: 80px;
+    height: 80px;
+  }
+
+  .checkoutBtn {
+    border: 1px $b-solid $primary;
+    width: 300px;
+    height: 40px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: 0.3s;
+    display: block;
+    color: $primary;
+    background: $white;
+    text-decoration: none !important;
+  }
+
+  .checkoutBtn:hover {
+    //border: 1px $b-solid $primary;
+    color: white;
+    background: $primary;
+
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .carouselImg {
+    height: 800px;
+  }
+
+  footer {
+    display: none;
+  }
+
+  img {
+    height: 800px;
+  }
+
+  .carouselImg {
+    height: 750px;
+  }
+
+  #image-gallery {
+    width: 100%;
+  }
+
+  #image-thumbs {
+    margin-top: 20px;
+  }
+
+  .thumb {
+    width: 80px;
+    height: 80px;
+  }
+
+  .checkoutBtn {
+    border: 1px $b-solid $primary;
+    width: 300px;
+    height: 40px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: 0.3s;
+    display: block;
+    color: $primary;
+    background: $white;
+    text-decoration: none !important;
+  }
+
+  .checkoutBtn:hover {
+    //border: 1px $b-solid $primary;
+    color: white;
+    background: $primary;
+
+  }
+}

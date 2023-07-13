@@ -1,0 +1,71 @@
+<div class="container  mt-5">
+    <div class="card p-2">
+        <div class="row">
+
+            <div class="col-6">
+                <form [formGroup]="orderForm" (ngSubmit)="submit()">
+                    <div class="w-100">
+                        <label for="exampleInputEmail1" class="form-label">Dog name</label>
+                        <input type="text"   class="form-control" style="width: 350px;"      [formControlName]="'dogName'">
+                      </div>
+                      <div class="w-100">
+                        <label for="exampleInputEmail1" class="form-label">Dog breed</label>
+                        <input type="text"  class="form-control" style="width: 350px;"       [formControlName]="'dogBreed'">
+                      </div>
+                      <div class="w-100">
+                        <label for="exampleInputEmail1" class="form-label">Grooming Services</label>
+                        <input type="text"   class="form-control" style="width: 350px;"      [formControlName]="'groomingServices'">
+                      </div>
+                      <div class="mb-3 mt-3">
+                        <h5 class="mt-4">Details</h5>
+                        <textarea [formControlName]="'description'" class="form-control" id="exampleFormControlTextarea1"
+                                  rows="3"></textarea>
+                      </div>
+                      <div class="mb-3 mt-4">
+                        <label class="form-label" for="exampleInputEndDate1">Date:</label>
+                        <input [formControlName]="'dayCareDate'" class="form-control" id="exampleInputEndDate1" type="datetime-local">
+                        <!-- <div *ngIf="bookingForm.get('endDateTime').errors?.['timeRangeInvalid']" style="color: red">
+                          Booking should be between 8am and 6pm
+                        </div> -->
+                      </div>
+                    <div align="end">
+                      <button mat-stroked-button color="primary" type="submit" style="margin-right: 5px;">Add booking</button>
+                     </div>
+                  </form>
+            </div>
+            <div class="col-6">
+
+                <div>
+                    <div class="dropzone">
+                        <div class="text-wrapper">
+                            <div class="centred">
+                                
+                                Drag and drop or<a (click)="selectFile.click()" class="browse-btn"> browse</a>  a file
+                            </div>
+                           
+                        </div>
+
+                    </div>
+                    <input type="file" style="display: none" value="select" #selectFile
+                    (change)="onFileSelect($event) "
+               >
+                </div>
+                <div class="mt-5">
+                    <div class="row">
+                        <mat-grid-list cols="4" rowHeight="1:1">
+                            <mat-grid-tile *ngFor="let file of order.images;let i=index;">
+                                <div style="position: relative;">
+                                <span class="remove-image" (click)="removeImage(i)">X</span>
+                                <img  [src]="file.url" width="100px" height="100px">
+                                </div>
+
+                            </mat-grid-tile>
+
+                        </mat-grid-list>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+</div>
